@@ -1,0 +1,969 @@
+
+/* ==========================
+   1. CONFIGURACIÓN GENERAL
+========================== */
+
+:root {
+    --negro: #171717;
+    --negro-claro: #222222;
+    --amarillo: #f5c400;
+    --blanco: #f5f5f5;
+    --gris: #aaaaaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--negro);
+    background-image:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.25) 75%,
+            transparent 75%
+        ),
+        linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.025) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.2) 75%,
+            transparent 75%
+        ),
+        linear-gradient(
+            180deg,
+            #292929 0%,
+            #111111 50%,
+            #242424 100%
+        );
+
+    background-size:
+        24px 24px,
+        24px 24px,
+        100% 100%;
+
+    color: var(--blanco);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================
+   2. ENCABEZADO Y NAVEGACIÓN
+========================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background-color: #111111;
+    border-bottom: 1px solid #333333;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    color: var(--amarillo);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--gris);
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--amarillo);
+}
+
+
+/* =====================================
+   ENCABEZADO INDUSTRIAL PARABELLUM
+===================================== */
+
+.header {
+    background: #090909;
+    border-bottom: 2px solid #FFA500;
+    padding: 20px 8%;
+    gap: 25px;
+}
+
+/* LOGO */
+
+.logo {
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo span {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+
+.logo small {
+    color: #FFA500;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+/* NAVEGACIÓN */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    position: relative;
+    color: #D0D0D0;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.25s ease;
+}
+
+/* Línea naranja animada */
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #FFA500;
+    transition: width 0.25s ease;
+}
+
+.nav a:hover {
+    color: #FFA500;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .logo {
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+}
+
+/* ==========================
+   3. PORTADA PRINCIPAL
+========================== */
+
+
+
+/* BANNER PRINCIPAL INDUSTRIAL */
+.hero {
+    position: relative;
+    background: #000000;
+    color: #ffffff;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    border-top: 2px solid #FFA500;
+    border-bottom: 2px solid #FFA500;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero .eyebrow {
+    color: #FFA500;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.1;
+    margin-bottom: 22px;
+    max-width: 650px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    color: #c7c7c7;
+    font-size: 17px;
+    max-width: 560px;
+    margin-bottom: 28px;
+}
+
+.hero .btn-primary {
+    display: inline-block;
+    background: #FFA500;
+    color: #111111;
+    padding: 13px 24px;
+    border: 1px solid #FFA500;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.hero .btn-primary:hover {
+    background: #ffbd3d;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 330px;
+        padding: 50px 24px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 15px;
+    }
+}
+
+/* ==========================
+   4. BOTÓN PRINCIPAL
+========================== */
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--amarillo);
+    color: var(--negro);
+    padding: 13px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ffda36;
+    transform: translateY(-3px);
+}
+
+/* ==========================
+   5. CATEGORÍAS
+========================== */
+
+.categories {
+    padding: 75px 8%;
+}
+
+.categories h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.category-card {
+    
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-color: var(--negro-claro);
+    border: 1px solid #383838;
+    border-radius: 8px;
+    padding: 30px;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.category-card:hover {
+    border-color: var(--amarillo);
+    transform: translateY(-4px);
+}
+
+.category-card h3 {
+    color: var(--amarillo);
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    color: var(--gris);
+    margin-bottom: 22px;
+}
+
+.category-card span {
+    font-weight: bold;
+}
+
+/* ==========================
+   6. PIE DE PÁGINA
+========================== */
+
+
+/* ==========================
+   7. ADAPTACIÓN A CELULARES
+========================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .nav {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 55px 7%;
+    }
+
+    .categories {
+        padding: 50px 7%;
+    }
+
+    .categories h2 {
+        font-size: 27px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+    background-color: #25D366;
+    color: #111;
+
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #35e477;
+    transform: translateY(-4px);
+}
+
+.whatsapp-icon {
+    font-size: 22px;
+}
+
+@media (max-width: 600px) {
+    .whatsapp-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 16px;
+    }
+}
+
+/* IMÁGENES DEL CATÁLOGO */
+.product-image {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.category-card {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .product-image {
+        height: 190px;
+    }
+}
+
+
+/* ACABADO PROFESIONAL PARA LAS TARJETAS */
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #383838;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #252525, #191919);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--amarillo);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.product-image {
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+.category-card h3 {
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    line-height: 1.7;
+}
+
+.category-card span {
+    display: inline-block;
+    color: var(--amarillo);
+    transition: color 0.3s ease;
+}
+
+.category-card:hover span {
+    color: #ffdf55;
+}
+
+/* En celulares no necesitamos elevación al tocar */
+@media (hover: none) {
+    .category-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .category-card:hover .product-image {
+        transform: none;
+    }
+}
+
+/* BOTONES DE CONSULTA DEL CATÁLOGO */
+.btn-consulta {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 11px 16px;
+    background-color: var(--amarillo);
+    color: var(--negro);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-consulta:hover {
+    background-color: #ffdc43;
+    transform: translateY(-2px);
+}
+
+/* CATÁLOGO DE PRODUCTOS */
+.catalogo-intro {
+    color: var(--gris);
+    max-width: 650px;
+    margin: -12px 0 30px;
+}
+
+.productos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+.producto-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.producto-card .product-image {
+    height: 220px;
+}
+
+.producto-card h3 {
+    line-height: 1.3;
+}
+
+.producto-card p {
+    flex-grow: 1;
+}
+
+.producto-card .btn-consulta {
+    align-self: flex-start;
+}
+
+@media (max-width: 900px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-card .product-image {
+        height: 230px;
+    }
+}
+
+/* =====================================
+   CATÁLOGO CAMPING - ESTILO INDUSTRIAL
+===================================== */
+
+#catalogo {
+    padding: 70px 6%;
+    background: transparent;
+}
+
+#catalogo > .eyebrow {
+    color: #FFA500;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#catalogo > h2 {
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 35px;
+}
+
+/* Grilla de productos */
+
+#catalogo .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Tarjetas grafito */
+
+#catalogo .category-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px;
+    background: rgba(22, 22, 22, 0.94);
+    border: 1px solid #454545;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#catalogo .category-card:hover {
+    border-color: #FFA500;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Fotografías */
+
+#catalogo .product-image {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: contain;
+    background: #f0f0f0;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 18px;
+}
+
+/* Texto */
+
+#catalogo .category-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+#catalogo .category-card p {
+    color: #c5c5c5;
+    font-size: 14px;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+#catalogo .category-card span {
+    color: #FFA500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 12px;
+}
+
+/* Botón naranja */
+
+#catalogo .btn-consulta {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 18px;
+    padding: 12px 10px;
+    background: #FFA500;
+    color: #111111;
+    border: 1px solid #FFA500;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+#catalogo .btn-consulta:hover {
+    background: #ffbd3d;
+    color: #000000;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    #catalogo .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Celular */
+
+@media (max-width: 560px) {
+    #catalogo {
+        padding: 45px 18px;
+    }
+
+    #catalogo .category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #catalogo .product-image {
+        height: 230px;
+    }
+}
+
+/* ENCABEZADO DEL CATÁLOGO */
+
+#catalogo .catalogo-heading {
+    margin-bottom: 35px;
+}
+
+#catalogo .catalogo-heading .eyebrow {
+    margin-bottom: 10px;
+}
+
+#catalogo .catalogo-heading h2 {
+    margin-bottom: 14px;
+}
+
+#catalogo .catalogo-linea {
+    display: block;
+    width: 64px;
+    height: 3px;
+    background: #FFA500;
+    margin-bottom: 16px;
+}
+
+#catalogo .catalogo-descripcion {
+    max-width: 600px;
+    color: #c5c5c5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =====================================
+   FOOTER PARABELLUM
+===================================== */
+
+.footer {
+    background-color: #111111;
+    color: #cccccc;
+    text-align: center;
+    padding: 25px 8%;
+    border-top: 2px solid #FFA500;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* BOTONES DE LA PORTADA */
+
+.hero-botones {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.hero-botones .btn-primary {
+    margin: 0;
+}
+
+.btn-secundario {
+    display: inline-block;
+    padding: 13px 24px;
+    background: transparent;
+    color: #FFA500;
+    border: 1px solid #FFA500;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn-secundario:hover {
+    background: #FFA500;
+    color: #111111;
+    transform: translateY(-2px);
+}
+
+/* BOTONES EN CELULAR */
+
+@media (max-width: 600px) {
+    .hero-botones {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-botones a {
+        box-sizing: border-box;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =====================================
+   TARJETAS DE INICIO - ESTILO INDUSTRIAL
+===================================== */
+
+.categories:not(#catalogo) > .eyebrow {
+    color: #FFA500;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.categories:not(#catalogo) > h2 {
+    color: #FFFFFF;
+}
+
+.categories:not(#catalogo) .category-card {
+    background: rgba(22, 22, 22, 0.94);
+    border: 1px solid #454545;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.categories:not(#catalogo) .category-card:hover {
+    border-color: #FFA500;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.categories:not(#catalogo) .category-card h3 {
+    color: #FFA500;
+}
+
+.categories:not(#catalogo) .category-card span {
+    color: #FFA500;
+}
+
+.categories:not(#catalogo) .category-card:hover span {
+    color: #FFBD3D;
+}
+
+
+/* =====================================
+   HERO CON IMÁGENES - PARABELLUM
+===================================== */
+
+/* INICIO */
+.hero-inicio {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.72) 48%,
+            rgba(0, 0, 0, 0.25) 100%
+        ),
+        url("../img/inicio/inventario.jpg") center / cover no-repeat;
+}
+
+/* ARMAS */
+body:has(a[href="armas.html"]:hover) .hero {
+    background-color: #000000;
+}
+
+body:has(.hero) .hero {
+    background-color: #000000;
+}
+
+/* Ajustes comunes para las tres portadas */
+.hero {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    .hero {
+        background-position: center;
+    }
+}
+
+/* =====================================
+   HERO CON IMÁGENES - PARABELLUM
+===================================== */
+
+/* INICIO */
+.hero-inicio {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.72) 45%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        url("../img/inicio/inventario.jpg");
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ARMAS */
+.hero-armas {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.72) 45%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        url("../img/armas/estanteria.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* CAMPING */
+.hero-camping {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92) 0%,
+            rgba(0, 0, 0, 0.72) 45%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        url("../img/camping/camp.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* AJUSTES PARA CELULARES */
+@media (max-width: 600px) {
+    .hero-inicio,
+    .hero-armas,
+    .hero-camping {
+        background-position: center;
+    }
+}
